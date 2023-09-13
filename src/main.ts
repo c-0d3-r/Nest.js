@@ -1,8 +1,10 @@
-import { App }           from './app';
-import { LoggerService } from './logger/logger';
+import { App }             from './app';
+import { LoggerService }   from './logger/logger';
+import { UsersController } from './users/users.controller';
 
 async function bootsrap() {
-  const app = new App(new LoggerService());
+  const loggerService = new LoggerService();
+  const app = new App(loggerService, new UsersController(loggerService));
 
   await app.init();
 }
