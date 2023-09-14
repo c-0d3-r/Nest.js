@@ -1,6 +1,7 @@
 import { Response, Router } from 'express';
 import { Route }            from './route.interface';
 import { ILogger }          from '../../logger/logger.interface';
+import { injectable }       from 'inversify';
 
 export enum HttpStatus {
   OK = 200,
@@ -12,6 +13,7 @@ export enum HttpStatus {
   INTERNAL_SERVER_ERROR = 500,
 }
 
+@injectable()
 export abstract class BaseController {
   private readonly _router: Router;
 
