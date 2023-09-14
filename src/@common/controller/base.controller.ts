@@ -1,6 +1,6 @@
 import { Response, Router } from 'express';
-import { LoggerService }    from '../../logger/logger';
 import { Route }            from './route.interface';
+import { ILogger }          from '../../logger/logger.interface';
 
 export enum HttpStatus {
   OK = 200,
@@ -15,7 +15,7 @@ export enum HttpStatus {
 export abstract class BaseController {
   private readonly _router: Router;
 
-  public constructor(private readonly logger: LoggerService) {
+  public constructor(private readonly logger: ILogger) {
     this._router = Router();
   }
 

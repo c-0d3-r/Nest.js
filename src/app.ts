@@ -1,8 +1,8 @@
 import express, { Express } from 'express';
 import { Server }           from 'http';
-import { LoggerService }    from './logger/logger';
 import { UsersController }  from './users/users.controller';
 import { ExceptionFilter }  from './@common/errors/exception.filter';
+import { ILogger }          from './logger/logger.interface';
 
 const defaultPort = 8000;
 
@@ -14,7 +14,7 @@ export class App {
   private server: Server | undefined;
 
   public constructor(
-    private readonly logger: LoggerService,
+    private readonly logger: ILogger,
     private readonly usersController: UsersController,
     private readonly exceptionFilter: ExceptionFilter
   ) {

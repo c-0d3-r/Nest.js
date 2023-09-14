@@ -1,13 +1,13 @@
 import { NextFunction, Request, Response } from 'express';
-import { LoggerService }                   from '../../logger/logger';
 import { HttpError }                       from './http.error';
+import { ILogger }                         from '../../logger/logger.interface';
 
 export interface ExceptonFilter {
   catch(err: HttpError, req: Request, res: Response, next: NextFunction): void;
 }
 
 export class ExceptionFilter {
-  public constructor(protected readonly logger: LoggerService) {}
+  public constructor(protected readonly logger: ILogger) {}
 
   public catch(
     err: HttpError | Error,
