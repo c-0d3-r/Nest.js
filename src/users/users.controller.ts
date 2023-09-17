@@ -4,9 +4,13 @@ import { HttpError }                       from '../@common/errors/http.error';
 import { ILogger }                         from '../logger/logger.interface';
 import { inject, injectable }              from 'inversify';
 import { TYPES }                           from '../types';
+import { IUsersController }                from './users-controller.interface';
 
 @injectable()
-export class UsersController extends BaseController {
+export class UsersController
+  extends BaseController
+  implements IUsersController
+{
   public constructor(@inject(TYPES.ILogger) logger: ILogger) {
     super(logger);
 

@@ -11,7 +11,7 @@ export const createContainer = () => {
   const appContainer = new Container();
 
   appContainer.bind<ILogger>(TYPES.ILogger).to(LoggerService);
-  appContainer.bind<UsersController>(TYPES.UserController).to(UsersController);
+  appContainer.bind<UsersController>(TYPES.IUserController).to(UsersController);
   appContainer
     .bind<IExceptonFilter>(TYPES.IExceptionFilter)
     .to(ExceptionFilter);

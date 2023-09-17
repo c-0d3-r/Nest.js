@@ -19,7 +19,7 @@ export class App {
   public constructor(
     @inject(TYPES.ILogger)
     private readonly logger: ILogger,
-    @inject(TYPES.UserController)
+    @inject(TYPES.IUserController)
     private readonly usersController: UsersController,
     @inject(TYPES.IExceptionFilter)
     private readonly exceptionFilter: ExceptionFilter
