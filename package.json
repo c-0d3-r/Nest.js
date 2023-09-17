@@ -1,6 +1,7 @@
 {
 	"scripts": {
-		"start:dev": "nodemon -w src -e ts src/main.ts"
+		"start:dev": "nodemon -w src -e ts src/main.ts",
+		"build": "tsc"
 	},
 	"devDependencies": {
 		"@types/express": "^4.17.17",
